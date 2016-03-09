@@ -52,6 +52,7 @@ int main() {
     //Second Thread Init
     strcpy(arg2.fileName, "second.mp3");
     strcpy(arg2.url, URL_SECOND);
+    arg2.time = 20;
 
     //Let's go start two threads with downloading
     result = pthread_create(&thread1, NULL, download, &arg1);
@@ -67,7 +68,7 @@ int main() {
     printf("Done Starting\n");
     pthread_join(thread1, NULL);
     printf("Thread One ended! \n");
-    pthread_join(thread1, NULL);
+    pthread_join(thread2, NULL);
     printf("Thread Two ended! \n");
 
     return EXIT_SUCCESS;
